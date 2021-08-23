@@ -1,0 +1,36 @@
+// tags
+
+@mixin tag($color, $backgroundColor) {
+  padding: 2px 6px;
+  font-size: 12px;
+  color: $color;
+  background-color: $backgroundColor;
+  border-radius: 4px;
+}
+
+%tag-base {
+  @include inline-flexbox;
+  @include text-style(12);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 700;
+  height: 20px;
+}
+
+.tag-red {
+  @extend %tag-base;
+  color: white;
+  background-color: $red;
+}
+
+.tag-grey {
+  @extend %tag-base;
+  color: $secondary;
+  background-color: $border;
+}
+
+.tag-green {
+  @extend %tag-base;
+  color: white;
+  background-color: $green;
+}
