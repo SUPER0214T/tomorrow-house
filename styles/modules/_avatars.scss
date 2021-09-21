@@ -1,4 +1,4 @@
-%avatar_base {
+%avatar-base {
   display: block;
   overflow: hidden;
   border-radius: 50%;
@@ -12,13 +12,13 @@
 }
 
 .avatar-24 {
-  @extend %avatar_base;
+  @extend %avatar-base;
   width: 24px;
   height: 24px;
 }
 
 .avatar-32 {
-  @extend %avatar_base;
+  @extend %avatar-base;
   width: 32px;
   height: 32px;
 }
