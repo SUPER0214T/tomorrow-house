@@ -4,9 +4,9 @@
  * # of columns------------------------4
  * gutter------------------------------20px
  * margin------------------------------5px
- * container-size----------------------100% - (5px * 2)
+ * container-size----------------------100% - (5px * 2) 
 
- TABLET (<768px) ---------------------------------------------
+ TABLET (>=768px) ---------------------------------------------
  fixture-------------------------------md
  * # of columns------------------------12
  * gutter------------------------------20px
@@ -14,7 +14,7 @@
  * container-size----------------------100% - (30px * 2)
  * max-container-width-----------------968px
 
- DESKTOP (<768px) ---------------------------------------------
+ DESKTOP (>=1200px) ---------------------------------------------
  fixture-------------------------------lg
  * # of columns------------------------12
  * gutter------------------------------20px
@@ -29,10 +29,12 @@ $gutter: 20px;
 $sm-columns: 4;
 $sm-margin: 5px;
 
+$md-breakpoint: 768px;
 $md-columns: 12;
 $md-margin: 30px;
-$md-max-container: 960px + $md-margin * 2;
+$md-max-container: 960px + $md-margin * 2; // padding 줘서 원하던 960px이 안나온다. padding이 Figma의 margin을 padding으로 표현한 것인데 이것 만큼의 크기를 더해줘서 만회한다.
 
+$lg-breakpoint: 1200px;
 $lg-columns: 12;
 $lg-unit: 75px;
 $lg-max-container: ($lg-unit + $gutter) * $lg-columns;
@@ -47,20 +49,21 @@ $lg-max-container: ($lg-unit + $gutter) * $lg-columns;
     flex-wrap: wrap;
   }
 
-  // .col-sm-1 .col-md-2 .col-lg-3
+  // 얘를 준 이유는 각각 column마다 gutter만큼의 크기로 좌우가 둘러 쌓여 있는데 그걸 매번 주는 것이 귀찮아서 아래 코드 짠 것
   [class^='col-'] {
-    padding: 0 $gutter/2;
+    padding: 0 $gutter / 2;
   }
 
   @for $i from 1 through $sm-columns {
     .col-sm-#{$i} {
+      // 아래의 코드는 width: $i / $sm-columns * 100% 를 하는 것과 같다.
       width: percentage($i / $sm-columns);
     }
   }
 
   @include responsive('T') {
-    max-width: $md-max-container;
     padding: 0 $md-margin;
+    max-width: $md-max-container;
 
     @for $i from 1 through $md-columns {
       .col-md-#{$i} {
@@ -70,8 +73,8 @@ $lg-max-container: ($lg-unit + $gutter) * $lg-columns;
   }
 
   @include responsive('D') {
+    padding: 0; // 얘는 0 auto니까 근데 auto는 .container 바로 뒤에서 적었었다.
     max-width: $lg-max-container;
-    padding: 0;
 
     @for $i from 1 through $lg-columns {
       .col-lg-#{$i} {
