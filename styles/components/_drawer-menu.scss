@@ -4,7 +4,7 @@ body {
 
 .drawer-menu {
   $drawer-menu-item-height: 36px;
-  $drawer-menu-list-padding: 8px;
+  $drawer-menu-list-padding: 20px;
   $community-length: 8;
   $store-length: 9;
   $expert-length: 2;
@@ -38,6 +38,7 @@ body {
       }
     }
 
+    // translateY(-50%)를 작성한 이유 -> rotate(180deg)만 준다면 이게 pos-center-Y 여기서 준 translateY(-50%)가 override되기 때문에 작성한 것이다.
     .drawer-menu-button .ic-chevron {
       transform: translateY(-50%) rotate(180deg);
     }
