@@ -1,16 +1,8 @@
 .lnb {
-  overflow-x: auto;
-  position: relative;
+  $lnb-link-padding: 8px;
+  $grid-margin: $sm-margin + $gutter / 2;
 
-  // &::after {
-  //   position: absolute;
-  //   display: block;
-  //   content: '';
-  //   top: calc(100% - 1px);
-  //   width: 100%;
-  //   height: 1px;
-  //   background-color: $border;
-  // }
+  overflow-x: auto;
 
   &::-webkit-scrollbar {
     display: none;
@@ -19,27 +11,14 @@
   &-list {
     @include inline-flexbox(start);
     white-space: nowrap;
-    position: relative;
-    left: -8px;
+    margin-left: -#{$grid-margin};
+    padding: 0 #{$grid-margin - $lnb-link-padding};
+    height: 40px;
+    border-bottom: 1px solid $border;
   }
 
   &-item {
-    // position: relative;
-    // height: 40px;
-    // overflow: hidden;
-
     &.is-active {
-      // &::after {
-      //   position: absolute;
-      //   display: block;
-      //   content: '';
-      //   top: calc(100% - 2px);
-      //   width: 100%;
-      //   height: 2px;
-      //   background-color: $blue;
-      //   z-index: 100;
-      // }
-
       a {
         color: $blue;
         border-bottom: 2px solid $blue;
@@ -51,11 +30,8 @@
       @include text-style(13, $dark);
       font-weight: 700;
       height: 40px;
-      padding: 0 8px;
-    }
-
-    .ic-new {
-      color: $red;
+      padding: 0 $lnb-link-padding;
+      border-bottom: 1px solid transparent;
     }
   }
 }
