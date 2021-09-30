@@ -49,4 +49,49 @@
     width: 100%;
     height: auto;
   }
+
+  @include responsive(T) {
+    padding-right: 30px;
+
+    &-slider {
+      margin: 0;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 8px;
+    }
+
+    &-thumbnail {
+      position: static;
+      transform: none;
+    }
+
+    .thumbnail-list {
+      @include flexbox(start);
+    }
+
+    .thumbnail-item {
+      button {
+        @include flexbox;
+        width: 56px;
+        height: 56px;
+        border-radius: 4px;
+        overflow: hidden;
+        opacity: 1;
+      }
+
+      img {
+        display: block;
+        width: 56px;
+      }
+
+      &.tns-nav-active {
+        button {
+          border: 2px solid $blue;
+          transform: none;
+          background-color: $white;
+          opacity: 1;
+        }
+      }
+    }
+  }
 }
