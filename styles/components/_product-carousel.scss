@@ -70,6 +70,8 @@
     }
 
     .thumbnail-item {
+      margin-right: 0;
+
       button {
         @include flexbox;
         width: 56px;
@@ -91,6 +93,43 @@
           background-color: $white;
           opacity: 1;
         }
+      }
+    }
+  }
+
+  @include responsive(D) {
+    padding-right: 60px;
+
+    @include flexbox;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+
+    &-slider {
+      width: 500px;
+      height: 500px;
+    }
+
+    .thumbnail-list {
+      flex-direction: column;
+    }
+
+    &-thumbnail {
+      margin-right: 8px;
+    }
+
+    .thumbnail-item {
+      &:not(:last-child) {
+        margin-right: 0;
+      }
+
+      img,
+      button {
+        width: 75px;
+        height: 75px;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 8px;
       }
     }
   }
