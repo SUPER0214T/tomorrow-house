@@ -5,6 +5,8 @@
   height: 40px;
   background-color: $white;
   border-bottom: 1px solid $border;
+  position: sticky;
+  top: $gnb-height-sm + $lnb-height-sm;
 
   &-list {
     @include flexbox;
@@ -45,6 +47,8 @@
     background-color: $background;
     height: 54px;
     border-bottom: 0;
+    position: sticky;
+    top: $gnb-height-md + $lnb-height-md;
 
     &-list {
       margin: 0;
