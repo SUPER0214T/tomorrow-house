@@ -9,6 +9,10 @@
       @include flexbox(start);
       margin-bottom: 8px;
 
+      dd.is-answered {
+        color: $blue;
+      }
+
       dd:not(:last-child):after {
         content: '|';
         margin: 0 4px;
