@@ -37,15 +37,22 @@
 
       span {
         position: absolute;
+        top: -2px;
         left: 0;
-        top: 0;
         margin-right: 8px;
         font-weight: 700;
         color: $blue;
       }
 
       p {
+        @include flexbox(start);
         padding-left: 20px;
+
+        i {
+          margin-right: 8px;
+          font-size: 16px;
+          color: $tertiary;
+        }
       }
     }
   }
