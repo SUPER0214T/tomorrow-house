@@ -31,13 +31,14 @@
   }
 
   &-body {
-    .question-content {
+    .question-content,
+    .answer-content {
       @include text-style(13, $primary);
       position: relative;
 
       span {
         position: absolute;
-        top: -2px;
+        top: 0;
         left: 0;
         margin-right: 8px;
         font-weight: 700;
@@ -54,6 +55,24 @@
           color: $tertiary;
         }
       }
+
+      .seller {
+        @include flexbox(start);
+        padding-left: 20px;
+        margin-bottom: 4px;
+
+        strong {
+          margin-right: 4px;
+        }
+
+        time {
+          @include text-style(12, $tertiary);
+        }
+      }
+    }
+
+    .answer-content {
+      margin-top: 12px;
     }
   }
 
@@ -65,13 +84,26 @@
     }
 
     &-body {
-      .question-content {
+      .question-content,
+      .answer-content {
         span {
           @include text-style(16);
         }
         p {
           @include text-style(16);
           padding-left: 24px;
+        }
+      }
+
+      .answer-content {
+        margin-top: 16px;
+
+        .seller {
+          margin-bottom: 4px;
+
+          strong {
+            @include text-style(16);
+          }
         }
       }
     }
