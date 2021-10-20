@@ -20,7 +20,7 @@
     &.is-active {
       a {
         color: $blue;
-        border-bottom: 2px solid $blue;
+        border-color: $blue;
       }
     }
 
@@ -30,7 +30,7 @@
       font-weight: 700;
       height: $lnb-height-sm;
       padding: 0 $lnb-link-padding;
-      border-bottom: 1px solid transparent;
+      border-bottom: 2px solid transparent;
 
       &:hover {
         color: $blue;
