@@ -3,9 +3,10 @@
   $lnb-height-md: 50px;
   $lnb-link-padding: 8px;
   overflow-x: auto;
-
+  border-bottom: 1px solid $border;
   background-color: $white;
   @include no-scrollbar;
+  text-align: center;
 
   &-list {
     @include inline-flexbox(start);
@@ -13,7 +14,6 @@
     margin-left: -#{$grid-margin};
     padding: 0 #{$grid-margin - $lnb-link-padding};
     height: $lnb-height-sm;
-    border-bottom: 1px solid $border;
   }
 
   &-item {
@@ -42,6 +42,7 @@
     overflow-x: visible;
     height: $lnb-height-md;
     border-bottom: 1px solid $border;
+    text-align: left;
 
     &-list {
       margin-left: 0;
