@@ -47,7 +47,7 @@
     height: 54px;
     border-bottom: 0;
     position: sticky;
-    top: $gnb-height-md + $lnb-height-md;
+    top: $gnb-height-md + $lnb-height-md - 1px;
     margin: 40px 0;
 
     &-list {
